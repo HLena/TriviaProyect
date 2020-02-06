@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js"></script>
+    </head>
+    <body>
+        
+        <div id="conteiner" >
+            <!-- Pregunta nombre-->
+            <div id="conteiner-index" class="ctn">
+                <div class="titlet">
+                    <h1>Bienvenid@ a Trivia</h1>
+                </div>
+                <p>¿Cuál es tu nombre?</p>
+                <input type="text" id="name-input"><br>
+                <button id="play-btn" class="btn" onclick="StartGame();">Jugar</button>
+            </div>
+
+            <!-- Bienvenid@ + nombre + opciones-->
+            <div id="conteiner-wellcome" class="ctn" >
+                <div class="titlet">
+                    <h1>Bienvenid@ <span id="your_name"></span> </h1>
+                </div>
+                <div class="themes">
+                    <p>Elige un tema</p>
+                    <button id="Type1" class="btn" onclick="selectAnOption('a')"> Geografia</button>
+                    <button id="Type2" class="btn" onclick="selectAnOption('b')"> Historia</button>
+                </div>
+            </div>
+
+            <!-- Preguntas-->
+            <div id="conteiner-questions" class="ctn" >
+                <div id="question"></div>
+                <div id="button-options">
+                    <button id="btn0" class="options"><span id="opt0"></span></button><br>
+                    <button id="btn1" class="options"><span id="opt1"></span></button><br>
+                    <button id="btn2" class="options"><span id="opt2"></span></button><br>
+                    <!-- <button id="next" class="btn" onclick="ShowQuestions()">Siguiente</button><br> -->
+                </div>
+            </div>
+            
+            <!-- Resultado + opciones-->
+            <div id="conteiner-result" class="ctn" >
+                <div class="titlet">
+                    <h1>Puntaje</h1>
+                </div>
+                <h2>Respuestas Correctas: <span id=score1></span></h2>
+                <h2>Respuestas Incorrectas: <span id=score2></span></h2>
+                <!-- Pregunta de volver a jugar -->
+                <div id="result-div1">
+                    <p>¿Quieres volver a jugar?</p>
+                    <button class="btn" onclick="PlayAgain('si')"> Sí</button>
+                    <button class="btn" onclick="PlayAgain('no')"> No</button>
+                </div>
+                <!-- muestra los dos temas  -->
+                <div id="result-div2" class="theme">    
+                    <p>Eligue un tema</p>                
+                    <button id="Type1" class="btn" onclick="selectAnOption('a')"> Geografia</button>
+                    <button id="Type2" class="btn" onclick="selectAnOption('b')"> Historia</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+    </body>
+</html>
