@@ -30,6 +30,12 @@ p{
     border-radius: 50px;
 }
 
+#question{
+    background:orangered;
+    font-size: 40px;    
+    color: aliceblue;
+    padding: 5px;
+}
 #name-input{
     width: 60%;
     height: 10%;
@@ -39,12 +45,6 @@ p{
     padding: 5px;
 }
 
-#question{
-    background:orangered;
-    font-size: 40px;    
-    color: aliceblue;
-    padding: 5px;
-}
 
 #time{
     /*background: skyblue;*/
