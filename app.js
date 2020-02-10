@@ -20,6 +20,17 @@ let questions = [];
 let indexQuestion = 0;
 let correctAnswers = 0;
 let incorrectAnswers = 0;
+let timeLeft = 10;
+
+let downloadTimer = setInterval(function(){
+    document.getElementById("time").innerHTML = timeLeft+"s";
+    timeLeft--;
+    if(timeLeft < 0){        
+        indexQuestion++;
+        incorrectAnswers++;
+        ShowQuestions();        
+    }
+},1000);
 
 
 
@@ -49,24 +60,19 @@ function selectAnOption(type_question) {
 }
 
 function ShowQuestions() {
+    timeLeft = 10;
     if (indexQuestion >= questions.length) {
         ShowResult();
     } else {
         let CurrentQuestion = questions[indexQuestion];
         document.getElementById("question").innerHTML = CurrentQuestion.question_;
+        console.log(CurrentQuestion.question_);
         let options = CurrentQuestion.options_;
-        for (let i = 0; i < options.length(); i++) {
+        for (let i = 0; i < options.length; i++) {
             document.getElementById("btn" + i).innerHTML = options[i];
             checkAnswer("btn" + i, options[i], CurrentQuestion.answer_);
         }
-        // document.getElementById("btn0").innerHTML = options[0];
-        //     checkAnswer("btn0",options[0],CurrentQuestion.answer_);
-
-        // document.getElementById("btn1").innerHTML = options[1];
-        //     checkAnswer("btn1",options[1],CurrentQuestion.answer_);
-
-        // document.getElementById("btn2").innerHTML = options[2];
-        //     checkAnswer("btn2",options[2],CurrentQuestion.answer_);        
+        
     }
 }
 
@@ -85,6 +91,7 @@ function checkAnswer(id, answ, correct_answ) {
 }
 
 function ShowResult() {
+    clearInterval(downloadTimer);
     document.getElementById("conteiner-questions").style.display = 'none';
     document.getElementById("conteiner-result").style.display = 'inline-block';
     let correct = document.getElementById("score1");
@@ -98,6 +105,7 @@ function ShowResult() {
 
 function PlayAgain(option) {
     if (option == "si") {
+        timeLeft = 10;
         document.getElementById("result-div2").style.display = "inline-block";
         document.getElementById("result-div1").style.display = "none";
     } else {
