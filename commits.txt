@@ -1,0 +1,11 @@
+commit 5db638e3446b783f9a10c897b8531d8ca2db26df
+Author: Elena <karengvcs@gmail.com>
+Date:   Sun Feb 9 21:06:40 2020 -0500
+
+    Adicionando temporizador de 10s por pregunta
+
+commit f802ea21feefaf9a181e5ce1e16437ad57d46692
+Author: karen <karengvcs@gmail.com>
+Date:   Thu Feb 6 15:25:59 2020 -0500
+
+    Mejorando version Trivia
